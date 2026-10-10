@@ -8,10 +8,11 @@
   "schemaVersion": 1,
   "source": {
     "files": {
-      "policies/default.json": "a3c57fd85df676dc8ee08215c3522c020b2b00d15be3e5f8b87a2fdacd1fd78b"
+      "policies/default.json": "a3c57fd85df676dc8ee08215c3522c020b2b00d15be3e5f8b87a2fdacd1fd78b",
+      "policies/organizations/2amlogic.json": "c40d56f3b19a930de7dfa81658d2a1ce2d5a242aaf576e1766b8060d240db898"
     },
     "kind": "github",
     "repository": "rjwalters/repo",
-    "revision": "e0eb029f40d67578395b9c624c8719b8644d2dc3"
+    "revision": "67eeed3d17cb987d2850fb0ff8f262d4157a9160"
   }
 }

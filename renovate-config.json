@@ -2,12 +2,97 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "automerge": false,
   "automergeType": "pr",
+  "description": [
+    "2AMLogic organization overrides (2AMLogic/2am#3687, infra/renovate/README.md amendment of 2026-10-08).",
+    "Merged over rjwalters/repo policies/default.json and deployed to 2AMLogic/.github:renovate-config by /repo:org-policy --install.",
+    "Update delays (minimumReleaseAge) come from default.json and are not restated here: one definition."
+  ],
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "helpers:pinGitHubActionDigests"
   ],
   "internalChecksFilter": "strict",
+  "labels": [
+    "dependencies",
+    "loom:review-requested"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "* 6-9 1 * *"
+    ]
+  },
   "minimumReleaseAge": "14 days",
   "minimumReleaseAgeBehaviour": "timestamp-required",
+  "packageRules": [
+    {
+      "description": "GitHub Actions: one PR for every update type, majors included. Workflows here pull a handful of actions; separate bumps are noise.",
+      "groupName": "github-actions",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "separateMajorMinor": false
+    },
+    {
+      "description": "Package ecosystems: minor and patch grouped per ecosystem; majors stay ungrouped so a breaking change gets its own PR.",
+      "groupName": "js minor and patch",
+      "matchCategories": [
+        "js"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "go minor and patch",
+      "matchCategories": [
+        "golang"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "python minor and patch",
+      "matchCategories": [
+        "python"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "groupName": "rust minor and patch",
+      "matchCategories": [
+        "rust"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "description": "The Go language version (go/toolchain directives) is a deliberate pinned step, not a routine bump.",
+      "enabled": false,
+      "matchDepTypes": [
+        "golang",
+        "toolchain"
+      ],
+      "matchManagers": [
+        "gomod"
+      ]
+    }
+  ],
+  "postUpdateOptions": [
+    "gomodTidy"
+  ],
+  "schedule": [
+    "* 6-9 * * 1"
+  ],
+  "timezone": "America/Los_Angeles",
   "vulnerabilityAlerts": {
     "automerge": false,
     "enabled": true,
