@@ -1,18 +1,18 @@
 {
   "dependencies": {
     "dependabotAlerts": true,
-    "dependabotSecurityUpdates": false,
-    "provider": "renovate",
-    "renovatePreset": "github>2amlogic/.github:renovate-config"
+    "dependabotSecurityUpdates": true,
+    "policySource": "2AMLogic/fleet-gitops dependency-updates.json, rendered into every client's .github/dependabot.yml by 2AMLogic/2am scripts/dependabot-render.py (runbook: 2AMLogic/2am infra/dependabot/README.md; 2AMLogic/2am#4351)",
+    "provider": "dependabot"
   },
   "schemaVersion": 1,
   "source": {
     "files": {
       "policies/default.json": "a3c57fd85df676dc8ee08215c3522c020b2b00d15be3e5f8b87a2fdacd1fd78b",
-      "policies/organizations/2amlogic.json": "c1ddbbdd3cd86831e0ef60f57e45a2e3c9bbbd911eb52faed08c9413927f878c"
+      "policies/organizations/2amlogic.json": "e5a4d273b05d59873629e3f0859ad6c1c318240e3707f7ccf6159bc776fca41f"
     },
     "kind": "github",
     "repository": "rjwalters/repo",
-    "revision": "df285dc1cdc9cb56de7d0abb30201428eda90455"
+    "revision": "017d9dabae9a344ec0bbbb5bf7ac48beb7612af2"
   }
 }
